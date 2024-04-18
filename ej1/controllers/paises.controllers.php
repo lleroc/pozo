@@ -47,4 +47,10 @@ switch ($_GET['op']) {
         $datos = $paises->eliminar($PaisId);
         echo json_encode($datos);
         break;
+    case 'contar':
+        $datos = array();
+        $datos = $paises->contar();
+        $res = mysqli_fetch_assoc($datos);
+        echo json_encode($res);
+        break;
 }
