@@ -27,6 +27,8 @@ class Clase_Paises
         $con = new Clase_Conectar();
         $con = $con->ProcedimientoConectar();
         $sql = "INSERT INTO `paises`(`Nombre`, `Poblacion`, `CodigoPostal`) VALUES ('$Nombre',$Poblacion,'$CodigoPostal')";
+        echo $sql;
+
         $datos = mysqli_query($con, $sql);
         $con->close();
         return $datos;

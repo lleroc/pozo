@@ -10,6 +10,7 @@ $paises = new Clase_Paises();
 switch ($_GET['op']) {
 
     case 'todos':
+        echo 'entro en todos';
         $datos = array();
         $datos = $paises->todos();
         while ($row = mysqli_fetch_assoc($datos)) {
@@ -25,20 +26,21 @@ switch ($_GET['op']) {
         echo json_encode($res);
         break;
     case 'insertar':
+        echo 'entro en insertar';
         $Nombre = $_POST['Nombre'];
-        $Pablacion = $_POST['Pablacion'];
+        $Poblacion = $_POST['Poblacion'];
         $CodigoPostal = $_POST['CodigoPostal'];
         $datos = array();
-        $datos = $paises->insertar($Nombre, $Pablacion, $CodigoPostal);
+        $datos = $paises->insertar($Nombre, $Poblacion, $CodigoPostal);
         echo json_encode($datos);
         break;
     case 'actualizar':
         $PaisId = $_POST['PaisId'];
         $Nombre = $_POST['Nombre'];
-        $Pablacion = $_POST['Pablacion'];
+        $Poblacion = $_POST['Poblacion'];
         $CodigoPostal = $_POST['CodigoPostal'];
         $datos = array();
-        $datos = $paises->actualizar($PaisId, $Nombre, $Pablacion, $CodigoPostal);
+        $datos = $paises->actualizar($PaisId, $Nombre, $Poblacion, $CodigoPostal);
         echo json_encode($datos);
         break;
     case 'eliminar':
