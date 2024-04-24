@@ -4,13 +4,9 @@ require_once('../models/paises.models.php');
 error_reporting(0);
 $paises = new Clase_Paises();
 
-// get    => url
-// post   => formulario
-// localhost/pozo/ej1/paises.controllers.php?op=todos
 switch ($_GET['op']) {
 
     case 'todos':
-        echo 'entro en todos';
         $datos = array();
         $datos = $paises->todos();
         while ($row = mysqli_fetch_assoc($datos)) {
@@ -26,7 +22,6 @@ switch ($_GET['op']) {
         echo json_encode($res);
         break;
     case 'insertar':
-        echo 'entro en insertar';
         $Nombre = $_POST['Nombre'];
         $Poblacion = $_POST['Poblacion'];
         $CodigoPostal = $_POST['CodigoPostal'];
