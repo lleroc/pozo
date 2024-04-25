@@ -44,8 +44,6 @@
             </form>
         </div>
     </nav>
-
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -58,14 +56,16 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>#</th>
                                     <th>Nombre</th>
                                     <th>Población</th>
                                     <th>Código Postal</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody id="lista"></tbody>
+                            <tbody id="lista">
+
+                            </tbody>
                         </table>
 
                     </div>
@@ -73,6 +73,12 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="./paises.js"></script>
+
+
 
 </body>
 
