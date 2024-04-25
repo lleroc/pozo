@@ -15,7 +15,7 @@ switch ($_GET['op']) {
         echo json_encode($todos);
         break;
     case 'uno':
-        $PaisId = $_GET['PaisId'];
+        $PaisId = $_POST['PaisId'];
         $datos = array();
         $datos = $paises->uno($PaisId);
         $res = mysqli_fetch_assoc($datos);
