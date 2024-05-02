@@ -13,7 +13,7 @@ switch ($_GET['op']) {
         echo json_encode($todos);
         break;
     case 'uno':
-        $UsuarioId = $_GET['UsuarioId'];
+        $UsuarioId = $_POST['UsuarioId'];
         $datos = array();
         $datos = $usuario->uno($UsuarioId);
         $res = mysqli_fetch_assoc($datos);
