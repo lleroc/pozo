@@ -1,6 +1,6 @@
 <?php
 require_once('../config/conexion.php');
-class Usaurios
+class Usuario
 {
     public function todos()
     {
