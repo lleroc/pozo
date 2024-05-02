@@ -1,12 +1,12 @@
 <?php
 require_once('../config/cors.php');
-require_once('../models/usuarios.models.php');
+require_once('../models/ciudades.models.php');
 
-$usuario = new Usuario();
+$ciudades = new Ciudades();
 switch ($_GET['op']) {
     case 'todos':
         $datos = array();
-        $datos = $usuario->todos();
+        $datos = $ciudades->todos();
         while ($row = mysqli_fetch_assoc($datos)) {
             $todos[] = $row;
         }
@@ -15,7 +15,7 @@ switch ($_GET['op']) {
     case 'todosFiltro':
         $Paises_Codigo = $_POST['Paises_Codigo'];
         $datos = array();
-        $datos = $usuario->todosFiltro($Paises_Codigo);
+        $datos = $ciudades->todosFiltro($Paises_Codigo);
         while ($row = mysqli_fetch_assoc($datos)) {
             $todos[] = $row;
         }
@@ -24,7 +24,7 @@ switch ($_GET['op']) {
     case 'uno':
         $idCiudades = $_POST['idCiudades'];
         $datos = array();
-        $datos = $usuario->uno($idCiudades);
+        $datos = $ciudades->uno($idCiudades);
         $res = mysqli_fetch_assoc($datos);
         echo json_encode($res);
         break;

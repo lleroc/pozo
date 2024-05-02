@@ -1,6 +1,6 @@
 <?php
 require_once('../config/conexion.php');
-class Usuario
+class Ciudades
 {
     public function todos()
     {
