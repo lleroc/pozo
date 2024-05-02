@@ -28,34 +28,4 @@ switch ($_GET['op']) {
         $res = mysqli_fetch_assoc($datos);
         echo json_encode($res);
         break;
-
-        $correo = $_POST['correo'];
-        $contrasenia = $_POST['contrasenia'];
-        if (empty($correo) || empty($contrasenia)) {
-            header('Location: ../login.php?op=2');
-            exit();
-        }
-        try {
-            $datos = array();
-            $datos = $usuario->login($correo);
-            $res = mysqli_fetch_assoc($datos);
-        } catch (Exception $e) {
-            header('Location: ../login.php?op=1');
-            exit();
-        }
-        try {
-            if (is_array($res) and count($res) > 0) {
-                if ($contrasenia == $res['contrasenia']) {
-                    $_SESSION['UsuarioId'] = $res['UsuarioId'];
-                    $_SESSION['correo'] = $res['correo'];
-                    $_SESSION['rol'] = $res['rol'];
-                    header('Location: ../index.php');
-                    exit();
-                }
-            }
-        } catch (\Throwable $th) {
-            header('Location: ../login.php?op=1');
-            exit();
-        }
-        break;
 }
