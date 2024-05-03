@@ -6,7 +6,7 @@ class Ciudades
     {
         $con = new Clase_Conectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT `idCiudades`, `Paises_Codigo`, `Ciudad` FROM `Ciudades` WHERE `idCiudades`=";
+        $cadena = "SELECT `idCiudades`, `Paises_Codigo`, `Ciudad` FROM `Ciudades`";
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
@@ -15,7 +15,8 @@ class Ciudades
     {
         $con = new Clase_Conectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT `idCiudades`, `Paises_Codigo`, `Ciudad` FROM `Ciudades` WHERE `Paises_Codigo`=$Paises_Codigo";
+        $cadena = "SELECT `idCiudades`, `Paises_Codigo`, `Ciudad` FROM `Ciudades` WHERE `Paises_Codigo`='$Paises_Codigo' order by Ciudad";
+
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;

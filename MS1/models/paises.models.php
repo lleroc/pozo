@@ -6,7 +6,7 @@ class Pais
     {
         $con = new Clase_Conectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT `Codigo`, `Pais` FROM `Paises`";
+        $cadena = "SELECT `Codigo`, `Pais` FROM `Paises` order by Pais";
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;

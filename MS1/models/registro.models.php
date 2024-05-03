@@ -6,7 +6,7 @@ class Registro
     {
         $con = new Clase_Conectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT * FROM `resgistros` ";
+        $cadena = "SELECT * FROM `resgistros` INNER JOIN Paises on Paises.Codigo = resgistros.PaisId INNER JOIN Ciudades on Ciudades.idCiudades = resgistros.CiudadId ";
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
@@ -15,7 +15,7 @@ class Registro
     {
         $con = new Clase_Conectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT * FROM `resgistros` WHERE `RegistrId`= $RegistrId";
+        $cadena = "SELECT * FROM `resgistros` INNER JOIN Paises on Paises.Codigo = resgistros.PaisId INNER JOIN Ciudades on Ciudades.idCiudades = resgistros.CiudadId WHERE `RegistrId`= $RegistrId";
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
